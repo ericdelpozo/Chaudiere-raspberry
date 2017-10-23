@@ -1,0 +1,55 @@
+
+
+Prérequis: le raspberry est installé et configuré, avec un accès un serveur SSH et une connexion internet.
+           l'os conseillé est raspbianlite, sans interface graphique, de manière à limiter les ressources utilisées
+           
+        
+
+	    Avant de lancer l'installation, il faut que le montage électronique soit réalisé (voir les fichiers pdf dans le réperoire documentation)
+
+
+
+1) Créer un répertoire chauffage et donner les droits
+$sudo mkdir /var/www/chauffage
+$sudo chmod 777 /var/www/chauffage
+
+
+2)Copier le contenu de l'archive dans /var/www/chauffage
+
+
+3)Lancer setup.sh
+
+$ cd /var/www/chauffage
+$ ./setup.sh
+
+ce script devrait :
+	installer quelques paquets (si pas encore fait)	
+	renseigner le fichier config.xml
+	Mettre enplace le demarrage automatique 
+	Mettre en place 3 actions plannifiées dans la crontab
+	(optionel) mettre en place le montage en ram du répertoire delog
+
+
+Lorsque tout fonctionne , depuis un navigateur: http://ip:5000 permet de lancer l'interface web.
+
+4)Editer le fichier /var/www/chauffage/programmes.xml pour placer et personnaliser les programmes
+
+
+
+Bug
+
+	L'interface web ne permet pas de modifier les programmes, il faut passer par SSH et editer directement le programme.
+		
+	Si le répertoire /sys/bus/w1/devices le contient pas un répertoire 28xxxxxx  c'est que la sonde n'est pas repérée
+		vérifier la partie electronique et que dans /etc/module les modules de la sonde sont présents
+	
+	Il arrive que le serveur Web, lag , voire plante  (si un client le ne lâche pas proporment la connexion)
+	dans ce cas, un script lancé depuis la crontab relance le serveur
+
+	 
+
+
+contact: ericdelpozo@free.fr
+
+
+

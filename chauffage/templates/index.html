@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel ="stylesheet" href="{{ url_for('static', filename='s1.css') }}"/>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+    </head>
+    <body>
+	
+        <table border="0">
+			<tr  >
+				<td colspan=2  align="center">
+					<h1> Mon chauffage </h1>
+				</td>
+			</tr>
+			<tr>
+				<td align="right">
+					{% if pactif!=None%}
+						 <h2>Prgm:<font color="green"> {{pactif}}</font></h2> 
+					{% else%}
+						<h2><font color="green"> Aucun programme</font></h2>
+					{% endif%}
+	
+				</td>
+				<td align="left">
+					{% if pactif!=None%}
+					<Form action = "" method = "post">
+						<button type="submit" NAME="action" VALUE="Stopper le programme">
+						<img src={{ url_for('static', filename = 'stop.jpg') }} width=40  >
+						</button> 
+					</Form>
+					{% endif%}
+				</td>
+			</tr>
+			<tr >
+				<td align="center" width="50%">
+					{%if temp==None %}
+						<h2>Temperature actuelle: <font color=red> Pas de sonde disponible</font></h2>
+					{% else %}
+						  <img src={{ url_for('static', filename = 'therm.jpg') }} width=35><br/>
+							 {{temp}}&deg;C
+					{% endif %}
+				</td>
+				<td align="center">
+					{% if etat_bruleur==0%}
+						 <img src={{ url_for('static', filename = 'chaudiere2.jpg') }} width=80>
+					{% elif etat_bruleur==1 %}
+						 <img src={{ url_for('static', filename = 'chaudiere1.jpg') }} width=80>
+					{% endif %}
+				</td>
+			</tr>
+			<tr> 
+				<td colspan="2" align="center">
+					<a href="courbes"  target="_blank">
+					<img src={{ url_for('static', filename = 'courbes.jpg') }} width=300>
+					</a>
+				</td>
+			</tr>
+        </table>
+       
+	<Form action = "" method = "post">
+	<table style="text-align:center">
+	
+	<tr>
+	<td>
+	<a href="detailprgm" target="_blank">
+	<img src={{ url_for('static', filename = 'prgm.jpg') }} width=80>
+	</a>
+	</td>
+		<td>
+			
+			<select name='sel_prgm'>
+			{% for p in prgm %}
+				<option value="{{p}}"
+				{% if p == pactif %}selected="selected"{% endif %}>
+				{{p}}
+				</option>
+			{% endfor %}
+			</select>
+			
+		</td>
+		<td>    
+			<INPUT TYPE="submit" name="action" VALUE="Executer">
+		</td>
+	</tr>
+	<tr height="50">
+		<td> Action </td>
+		
+		<td>  <INPUT  TYPE="submit" NAME="action" VALUE="Relancer le serveur" /></td>
+		<td>  <INPUT TYPE="submit" NAME="action" VALUE="Eteinde le serveur"></td>
+	</tr>
+	</table>   
+</form>    
+</body>
+</html>

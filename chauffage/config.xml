@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<setting  nom="chauffage chaudiere">
+<ip>192.168.0.78</ip>
+<port>5000</port>
+<temperature_haute>20</temperature_haute>
+<temperature_basse>17</temperature_basse>
+<programme_defaut>Programme(18-20)</programme_defaut>
+<sonde>/sys/bus/w1/devices/28-0516a50cc9ff/w1_slave</sonde>
+<autostart>1</autostart>
+<pin_gpio>16</pin_gpio>
+<seuil>0.4</seuil>
+</setting>

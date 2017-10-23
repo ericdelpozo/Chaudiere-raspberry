@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel ="stylesheet" href="{{ url_for('static', filename='s1.css') }}"
+    </head>
+    <body>
+    <h1><font color="green">Historiques</font></h1>
+   <form action="/courbe/" method="post">
+   
+    <table style="text-align:center">
+    <tr>
+    
+    <td>
+		<button type="submit" NAME="action" VALUE="1j">
+		<img src={{ url_for('static', filename = 'courbe24.jpg') }} width=100  >
+		</button>
+	</td>
+    <td>
+    <button type="submit" NAME="action" VALUE="2j">
+		<img src={{ url_for('static', filename = 'courbe48.jpg') }} width=100  >
+		</button>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <button type="submit" NAME="action" VALUE="1s">
+		<img src={{ url_for('static', filename = 'courbe7j.jpg') }} width=100  >
+	</button>
+    
+    </td>
+    <td>
+    
+    <select name='sel_date'>
+		{% for p in dates %}
+			<option value="{{p}}" >
+				{{p}}
+			</option>
+		{% endfor %}
+	</div>
+	<input type="submit" NAME="action" VALUE="-->Ok">
+	<div/>
+	</select>
+    
+    </td>
+    
+    </tr>
+    
+
+	
+	</table>
+	</form>
+    </body>
+</html>

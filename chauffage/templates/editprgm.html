@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel ="stylesheet" href="{{ url_for('static', filename='s1.css') }}"/>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    </head>
+    <body>
+        <form action="" method="post">
+        <table border="0">
+		<tr align="center">
+		<td></td>
+		{% for i in range(24)%}
+		<td> {{i}} </td>
+		{% endfor %} 
+		</tr>
+			<tr  >
+				<td>Lundi</td>
+				
+					{% for i in range(24)%}
+					<td> <input type="checkbox" id="lh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+			<tr  >
+				<td>Mardi</td>
+				{% for i in range(24)%}
+					<td> <input type="checkbox" id="mh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+			<tr  >
+				<td>Mercredi</td>
+				{% for i in range(24)%}
+					<td> <input type="checkbox" id="mmh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+			<tr  >
+				<td>Jeudi</td>
+				{% for i in range(24)%}
+					<td> <input type="checkbox" id="jh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+			<tr  >
+				<td>Vendredi</td>
+				{% for i in range(24)%}
+					<td> <input type="checkbox" id="vh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+			<tr  >
+				<td>Samedi</td>
+				{% for i in range(24)%}
+					<td> <input type="checkbox" id="sh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+			<tr  >
+				<td>Dimanche</td>
+				{% for i in range(24)%}
+					<td> <input type="checkbox" id="dh{{i}}" name="subscribe" value="newsletter"> 
+					 </td>
+					{% endfor %} 
+			</tr>
+        </table>
+       <input type="text" name="nomprg" value=={{nomprg}} >
+       <input type="submit" name="modifprg" value="Valider">
+       <input type="submit" name="modifprg" value="Annuler">
+       </form>
+</body>
+</html>

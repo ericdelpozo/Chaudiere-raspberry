@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link rel ="stylesheet" href="{{ url_for('static', filename='s1.css') }}"
+    </head>
+    <body>
+       {% if image==None%}
+       Pas assez d'information pour tracer une courbe
+		{% else %}
+		<img src="images/im.png" align="center">
+		{% endif %}
+		<a href="#" onclick="window.close()">Fermer</a>       
+    </body>
+</html>

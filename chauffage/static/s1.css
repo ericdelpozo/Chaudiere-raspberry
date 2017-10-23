@@ -1,0 +1,72 @@
+input[type="range"] {
+    position: relative;
+    margin-left: 1em;
+}
+input[type="range"]:after,
+input[type="range"]:before {
+    position: absolute;
+    top: 1em;
+    color: #aaa;
+}
+input[type="range"]:before {
+    left:0em;
+    content: attr(min);
+}
+input[type="range"]:after {
+    right: 0em;
+    content: attr(max);
+}
+
+h1 {
+ font-size: 300%; 
+ color: brown; 
+}
+h2 {
+ font-size: 100%; 
+ color: blue; 
+}
+h5 {
+ font-size: 60%; 
+ color: black; 
+}
+h3 {
+font-size: 200%; 
+color: red; 
+text-align: center;
+}
+h4 {
+font-size : 120%;
+text-decoration: underline;
+color: green;
+}
+
+div.styled {
+    vertical-align: middle;
+    margin: 2px;
+    Padding: 1px 0;
+    width: 30%;
+    min-width: 195px;
+    display: inline-block; /* pour pouvoir afficher deux boîtes l'une à côté de l'autre */
+    overflow: hidden; /* this hides the select's drop button */
+    background: #FFF url(img/select.png) no-repeat center right; /* L'icône flèche */
+}
+
+div.styled select {
+	width: 115% /* this percentage effectively extends the drop down button out of view */;
+    background-color: transparent /* this hides the select's background making any styling visible from the div */;
+    background: none;
+    -webkit-appearance: none /* this is required for Webkit browsers */;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+div.styled, input, textarea {
+    border: none;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+

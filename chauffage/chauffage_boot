@@ -1,0 +1,49 @@
+#! /bin/sh
+# /etc/init.d/chauffage
+
+### BEGIN INIT INFO
+# Provides:          chauffage
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: interface web pour la gestion du chauffage
+# Description:       interface web pour la gestion du chauffage
+### END INIT INFO
+
+# 1) Make script executable:
+# sudo chmod 755 /etc/init.d/brewonboot
+
+# 2) Register script to be run at start-up:
+# sudo update-rc.d chauffage_boot defaults
+
+# To remove script from start-up:
+# sudo update-rc.d -f chauffage_boot remove
+
+# To test starting the program:
+# sudo /etc/init.d/chauffage_boot start
+
+# To test stopping the program:
+# sudo /etc/init.d/chauffage_boot stop
+
+# If you want a command to always run, put it here
+
+# Carry out specific functions when asked to by the system
+case "$1" in
+    start)
+        echo "Demarrage web.py voir /var/www/chauffage"
+        # run application you want to start
+	/var/www/chauffage/scripts/start.sh      
+    ;;
+    stop)
+        echo "Arrête et nettoie"
+	 /var/www/chauffage/stop.sh        
+
+   ;;
+*)
+    echo "Usage: /etc/init.d/chauffage_boot {start|stop}"
+    exit 1
+    ;;
+esac
+
+exit 0

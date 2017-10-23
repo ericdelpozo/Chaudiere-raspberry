@@ -1,0 +1,2 @@
+gcc `xml2-config --cflags --libs` -o chaudiere chaudiere.c -lwiringPi
+gcc `xml2-config --cflags --libs` -o temperature temperature.c
