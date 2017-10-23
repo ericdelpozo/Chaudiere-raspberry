@@ -17,7 +17,7 @@ Langages de programmation utilisées.
   Pilotage de la chaudière : C
 
 
-Présentaton et screenshoot 
+Présentation et screenshoot 
     https://github.com/ericdelpozo/Chaudiere-raspberry/blob/master/chauffage/documentation/presentation.pdf
 
 
